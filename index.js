@@ -34,7 +34,7 @@ app.use(helmet())
 // Error handling middleware
 app.use((err, req, res, next) => {
 	console.error(err.stack)
-	res.status(500).send('Something broke!')
+	res.status(500).send('Internal Server Error')
 })
 
 // route untuk authentication
@@ -42,5 +42,5 @@ app.use('/auth', authRouter)
 
 // menjalankan backend expressjs
 app.listen(PORT, () => {
-	console.log(`Example app listening on port ${PORT}`)
+	console.log(`Backend listening on port ${PORT}`)
 })
